@@ -6,9 +6,19 @@ def index
 
   end
 
+def show
+  @post = Post.find(params[:id])
+end
+
   def create
     # render plaine: params[:post].inspect
-  @post = Post.new(params[:post])
+  @post = Post.new(post_params)
+
+  @post.save
+    redirect_to @post
+  end
+  private def  post_params
+    params.require(:post).permit(:title, :body)
   end
 end
 
