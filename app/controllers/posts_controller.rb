@@ -7,7 +7,8 @@ def index
   end
 
   def create
-    render plaine: params[:post].inspect
+    # render plaine: params[:post].inspect
+  @post = Post.new(params[:post])
   end
 end
 
