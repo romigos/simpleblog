@@ -14,10 +14,13 @@
     <h5 class="my-0 mr-md-auto font-weight-bold">Мій перший сайт на рельсах</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <span class="p-2 text-dark"><%= link_to "Головна сторінка", home_path %></span>
-
+      <span class="p-2 text-dark"><%= link_to "Про нас ", about_path %></span>
+      <span class="p-2 text-dark"><%= link_to "Наші контакти ", contacts_path %></span>
     </nav>
-    <span class="btn btn-outline-primary"><%= link_to "Додавання посту", new_post_path %></span>
+    <span class="btn btn-outline"><%= link_to "Додавання посту", new_post_path %></span>
   </div>
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
