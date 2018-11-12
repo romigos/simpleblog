@@ -1,2 +1,4 @@
 <H1><%=@post.title %></H1>
 <H1><%=@post.body %></H1>
+<hr>
+<%= link_to "Редактувати", edit_post_path(@post),^class => 'btn btn-warning' %>
