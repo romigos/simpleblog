@@ -31,5 +31,12 @@
 /config/master.key
 
 # file: ~/.gitignore_global
+
+database.yml
+doc/
+*.swp
+*~
+.project
 .DS_Store
 .idea
+.secret
