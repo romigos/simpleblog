@@ -3,3 +3,26 @@
 <hr>
 <%= link_to "Редактувати", edit_post_path(@post),:class => 'btn btn-warning' %>
 <%= link_to "Видалити пост", post_path(@post), method: :delete, data: {confirm: "Чи ви дійсно хочете видалити пост?"}, :class => 'btn btn-danger' %>
+<hr>
+<h2>Всі коментарі </h2>
+<% @post.comments.each do |comment| %>
+  <div class="alert alert-light">
+   <p><strong><%=comment.username %></strong>:<%=comment.body %></p>
+  </div>
+<% end %>
+<hr>
+<h2>Додавання комментаря</h2>
+<%= form_for ([@post,@post.comments.build]) do |f| %>
+     <p>
+    Користувач<br>
+    <%= f.text_field(:username, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    Текст коментаря <br>
+    <%= f.text_area(:body, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    Название<br>
+    <%= f.submit("Додати коментар",{:class => 'btn btn-warning'}) %>
+  </p>
+<%end%>
