@@ -19,7 +19,7 @@
       <span class="btn btn-outline"><%= link_to "Додавання посту", new_post_path %></span>
     </nav>
     <% if user_signed_in? %>
-      <span class="p-2 text-dark"><%= link_to "Вихід ", destroy_new_user_session_path, method: :delete%></span>
+      <span class="p-2 text-dark"><%= link_to "Вихід ", destroy_user_session_path, method: :delete%></span>
       <%else %>
       <span class="p-2 text-dark"><%= link_to "Вхід ", new_user_session_path %></span>
       <span class="p-2 text-dark"><%= link_to "Реєстрація ", new_user_registration_path %></span>
