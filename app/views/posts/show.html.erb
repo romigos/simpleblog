@@ -1,9 +1,11 @@
 <H1><%=@post.title %></H1>
 <H1><%=@post.body %></H1>
 <hr>
+<%if user_signed_in? %>
 <%= link_to "Редактувати", edit_post_path(@post),:class => 'btn btn-warning' %>
 <%= link_to "Видалити пост", post_path(@post), method: :delete, data: {confirm: "Чи ви дійсно хочете видалити пост?"}, :class => 'btn btn-danger' %>
-<hr>
+<%end %>
+  <hr>
 <h2>Всі коментарі </h2>
 <% @post.comments.each do |comment| %>
   <div class="alert alert-light">
